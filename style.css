@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text-color: #fff;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.5);
+  --surface-color-hover: rgba(255, 255, 255, 0.2);
+  --highlight-color-light-mode: rgba(255, 255, 255, 0.5);
+  --switch-bg: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: #000;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color-light-mode: rgba(0, 0, 0, 0.1);
+  --switch-bg: url(./assets/sun.svg);
+}
+
+body {
+  /* background-image: url(./assets/mobile/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; */
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  height: 712px;
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+#profile {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  padding: 24px;
+}
+/* a tag <img> is inline element, so it will be displayed in one line. You can use display: block; to make it display in block.
+in other hand, you can use text-align:center; in its father to make it display in center. */
+
+/* the tags <p> and <span> are inline elements as well */
+#profile img {
+  /* display: block; */
+  width: 112px;
+  margin: auto;
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* switch */
+
+#switch {
+  width: 64px; // same width as span tag
+
+  border: 1px solid red;
+  margin: 4px auto;
+
+  position: relative;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white var(--switch-bg) no-repeat center;
+  border: none;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+
+  margin-bottom: 24px;
+}
+
+.light #switch button {
+  right: 0;
+  left: unset;
+}
+
+/* Links */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: --text-color;
+  padding: 16px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 8px;
+
+  font-weight: 500;
+  transition: background all 0.3s ease-in-out;
+}
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1px solid #ffffff;
+}
+
+/* social links */
+#social__links {
+  display: flex;
+  gap: 16px;
+  padding: 24px 0px;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+#social__links a {
+  display: flex;
+  padding: 16px;
+
+  transition: background all 0.3s;
+}
+
+#social__links a:hover {
+  background: var(--highlight-color-light-mode);
+  border-radius: 50%;
+}
